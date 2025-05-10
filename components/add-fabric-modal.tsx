@@ -126,7 +126,7 @@ export default function AddFabricModal({
     try {
       // Send data to webhook endpoint
       const response = await fetch(
-        "https://n8n-service-sfwl.onrender.com/webhook/ccc75f32-25c6-4a20-814d-03af731baa4",
+        "https://n8n-service-sfwl.onrender.com/webhook/df8126ac-732c-47a3-8e98-b73008e56128",
         {
           method: "POST",
           headers: {

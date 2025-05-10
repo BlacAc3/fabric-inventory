@@ -65,6 +65,30 @@ export default function EditFabricModal({
       lastUpdated: new Date().toISOString().split("T")[0],
     };
 
+    // Send POST request to webhook with the updated fabric data
+    fetch(
+      "https://n8n-service-sfwl.onrender.com/webhook/14961d69-e0b2-40c8-85ff-d96bac69fbb2",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(fabricToSave),
+      },
+    )
+      .then((response) => {
+        if (!response.ok) {
+          console.error(
+            "Failed to send webhook notification:",
+            response.statusText,
+          );
+        } else {
+          console.log("Webhook notification sent successfully");
+        }
+      })
+      .catch((error) => {
+        console.error("Error sending webhook notification:", error);
+      });
     onSave(fabricToSave as Fabric);
   };
 
@@ -150,7 +174,7 @@ export default function EditFabricModal({
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Category
               </label>
-              <select
+              {/* <select
                 name="category"
                 value={editedFabric.category}
                 onChange={handleInputChange}
@@ -163,7 +187,15 @@ export default function EditFabricModal({
                 <option value="Linen">Linen</option>
                 <option value="Polyester">Polyester</option>
                 <option value="Denim">Denim</option>
-              </select>
+              </select> */}
+              <input
+                type="text"
+                name="category"
+                value={editedFabric.category}
+                onChange={handleInputChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-200"
+                placeholder="Enter category"
+              />
             </div>
             <div
               className="animate-slide-up"

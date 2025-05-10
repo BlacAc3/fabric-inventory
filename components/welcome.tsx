@@ -227,11 +227,10 @@ export default function Welcome() {
 
       // Parse the response JSON
       const json = await response.json();
-      const data = json.data.output;
+      const data = json.output;
       console.log(data);
-      console.log(json.data.transcription);
-      if (data && json.data.transcription) {
-        setTranscription(json.data.transcription);
+      if (data && json.transcription) {
+        setTranscription(json.transcription);
 
         // Parse fabric data from response
         if (data.name) {
