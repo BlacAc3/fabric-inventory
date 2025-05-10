@@ -627,54 +627,6 @@ export default function Welcome() {
               </div>
 
               <div className="flex flex-col sm:flex-row justify-between items-center">
-                <div className="flex space-x-3 mb-3 sm:mb-0">
-                  <button
-                    onClick={toggleInputMethod}
-                    className="text-primary-600 hover:text-primary-800 text-sm font-medium transition-colors duration-200 flex items-center"
-                  >
-                    {showManualInput || (
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="w-4 h-4 mr-2"
-                        >
-                          <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-                          <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                          <line x1="12" x2="12" y1="19" y2="22" />
-                        </svg>
-                        Switch to Voice
-                      </>
-                    )}
-                  </button>
-
-                  {(transcription || aiResponse) && (
-                    <button
-                      onClick={resetConversation}
-                      className="text-neutral-600 hover:text-neutral-800 text-sm font-medium transition-colors duration-200 flex items-center"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="w-4 h-4 mr-2"
-                      >
-                        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38" />
-                      </svg>
-                      Reset
-                    </button>
-                  )}
-                </div>
-
                 <div className="flex space-x-3">
                   <button
                     onClick={handleContinue}
