@@ -519,21 +519,6 @@ export default function Welcome() {
                       )}
                     </div>
 
-                    {/* Audio visualization */}
-                    {isRecording && (
-                      <div className="h-16 mb-4 flex items-center justify-center">
-                        <div className="flex items-center space-x-[2px]">
-                          {audioVisualization.map((height, index) => (
-                            <div
-                              key={index}
-                              className="w-1 bg-primary-500 rounded-full transition-all duration-100"
-                              style={{ height: `${height}px` }}
-                            ></div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
                     <div className="flex justify-center space-x-3">
                       {!isRecording && !isProcessing && (
                         <button
@@ -647,7 +632,7 @@ export default function Welcome() {
                     onClick={toggleInputMethod}
                     className="text-primary-600 hover:text-primary-800 text-sm font-medium transition-colors duration-200 flex items-center"
                   >
-                    {showManualInput ? (
+                    {showManualInput || (
                       <>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -664,26 +649,6 @@ export default function Welcome() {
                           <line x1="12" x2="12" y1="19" y2="22" />
                         </svg>
                         Switch to Voice
-                      </>
-                    ) : (
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="w-4 h-4 mr-2"
-                        >
-                          <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                          <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                          <path d="M9 9l1 0" />
-                          <path d="M9 13l6 0" />
-                          <path d="M9 17l6 0" />
-                        </svg>
-                        Switch to Text
                       </>
                     )}
                   </button>
