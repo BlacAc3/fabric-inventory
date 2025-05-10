@@ -304,7 +304,7 @@ export default function AddFabricModal({
               style={{ animationDelay: "0.3s" }}
             >
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Price ($/yd)
+                Price (₦/yd)
               </label>
               <input
                 type="number"

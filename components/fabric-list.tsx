@@ -166,7 +166,7 @@ export default function FabricList({
                 </td>
                 <td className="px-3 py-4 whitespace-nowrap lg:px-6">
                   <div className="text-sm text-gray-900">
-                    ${fabric.price.toFixed(2)}/yd
+                    ₦{fabric.price.toFixed(2)}/yd
                   </div>
                   <div className="text-xs text-gray-500 hidden md:block">
                     Updated: {fabric.lastUpdated}
